@@ -4,7 +4,7 @@
 #include <fstream>
 using namespace std;
 
-#define rounds 4
+#define rounds 5
 const int contest=10;
 char z = '*', s = ' ';
 const string scores = "BowlingScores.txt";//avoid hardcoding file name
@@ -54,13 +54,13 @@ void GetAverageScore( int points[][rounds],double average[], int plo)
     average[fa] = 0;
       for(int d=0; d<rounds; d++)
       {
-        average[fa] += points[fa][d];
+        average[fa] = average[fa] + points[fa][d];
       }
 average[fa]  = average[fa] / rounds;
   }//this function calculates the average scores
 }
 void PrettyPrintResults(char bowlern[][contest], int points[][rounds], double average[], int plo){
-cout<<"Players"<<setw(5) << setfill(' ') << s << "Round#1"<< setw(5) << setfill(' ') << s << "Round#2" << setw(5) << setfill(' ') << s <<"Round#3"<< setw(5) << setfill(' ') << s <<"Round#4" << setw(5) << setfill(' ') << s << "Average" << endl;//outputs each round of scores with spaces inbetween
+cout<<"Players"<<setw(5) << setfill(' ') << s << "Round#1"<< setw(5) << setfill(' ') << s << "Round#2" << setw(5) << setfill(' ') << s <<"Round#3"<< setw(5) << setfill(' ') << s <<"Round#4" << setw(5) << setfill(' ') << s <<"Round#5" << setw(5) << setfill(' ') << s << "Average" << endl;//outputs each round of scores with spaces inbetween
 for(int fa=0; fa<plo; fa++)
 {
   cout<<left<<setw(15)<<bowlern[fa]<<"\t";
